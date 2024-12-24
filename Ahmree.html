@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<style>
+    /* Reset and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: white;
+    background: linear-gradient(to right, #1E1E1E, #3A3A3A);
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4A90E2;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #FFD700;
+}
+
+/* Portfolio Container */
+.portfolio-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Navigation Bar */
+.navlist {
+    display: flex;
+    gap: 2rem;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #4A90E2, #50C878);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navlist li a:hover {
+    color: #FFD700;
+}
+
+/* Left Container */
+.main-container {
+
+    background: linear-gradient(to bottom right, #1E1E1E, #4A4A4A);
+    width: 100%;
+    display: flex;
+   height: 90vh;
+    padding: 30px 80px 30px 80px; /* top, right, bottom, left */
+}
+
+.main-container h2 {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.main-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.main-container p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.main-container .left {
+
+    display: flex;
+    width: 50%;
+    align-items: center;
+    
+}
+.main-container .right{
+
+    justify-content: center;
+    align-items: center;
+ display: flex;
+ width: 50%;
+ 
+}
+
+.right img{
+    width: 50%;
+    border-radius: 50%;
+}
+
+
+/* Buttons Section */
+.button {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Right Container */
+.social {
+    background: linear-gradient(to top left, #6A1B9A, #8E44AD);
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 10px 0px 10px 0px;
+}
+
+.social .icons i {
+    font-size: 2rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social .icons i:hover {
+    transform: scale(1.2);
+    color: #FFD700;
+}
+
+.ahed{
+    width: 64%;
+}
+
+:root {
+    --textColor: #FFD700;
+    --textStroke: 1.5px;
+    --typingDuration: 4s; /* Duration for typing animation */
+    --eraseDuration: 2s; /* Duration for erasing animation */
+    --cursorBlink: 0.6s;
+    --pauseBetween: 1s; /* Pause before typing starts again */
+}
+/* Styling for the heading */
+.amin-head {
+    text-align: left;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: var(--textStroke) var(--textColor);
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    border-right: var(--textStroke) solid var(--textColor); /* Typing cursor */
+    animation: typing var(--typingDuration) steps(30, end) infinite, 
+               blink var(--cursorBlink) step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%; /* Full text is visible */
+    }
+    70% {
+        width: 100%; /* Pause before erasing */
+    }
+    100% {
+        width: 0; /* Erase the text */
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Our Services Section */
+.services-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #3A3A3A, #1E1E1E);
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-box {
+    background: linear-gradient(to bottom, #4A90E2, #50C878);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-box i {
+    font-size: 3rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Smooth Scroll for Navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Studies and Experience Section */
+.studies-experience-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #1E1E1E, #3A3A3A);
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.studies-experience-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.studies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.study-box {
+    background: linear-gradient(to bottom, #50C878, #4A90E2);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.study-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.study-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.study-box p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.study-box span {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #FFD700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #3A3A3A, #1E1E1E);
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.pricing-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.pricing-box {
+    background: linear-gradient(to bottom, #4A90E2, #50C878);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.pricing-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-box.popular {
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    border: 2px solid #FFD700;
+}
+
+.pricing-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+.pricing-box .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #FFD700;
+    text-align: center;
+}
+
+.pricing-box .price-cen {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #4A90E2;
+    text-align: center;
+}
+
+.pricing-box ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.pricing-box ul li {
+    font-size: 1rem;
+}
+
+.pricing-box button {
+    background: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.pricing-box button:hover {
+    background: #FFD700;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #1E1E1E, #3A3A3A);
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    width: 40%;
+    background: linear-gradient(to bottom right, #4A90E2, #50C878);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.contact-detail i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #FFD700;
+}
+
+.contact-form {
+    width: 40%;
+    background: linear-gradient(to bottom right, #4A90E2, #50C878);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+.contact-form button {
+    background: #4A90E2;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #FFD700;
+}
+
+@media (max-width: 768px) {
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Footer Section */
+.footer {
+    background: linear-gradient(to right, #4A90E2, #50C878);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+/* Footer Navigation Menu */
+.footer-navlist {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-navlist li {
+    list-style: none;
+}
+
+.footer-navlist li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.footer-navlist li a:hover {
+    color: #FFD700;
+}
+
+/* Footer Copyright */
+.footer p {
+    font-size: 0.9rem;
+    color: #D3D3D3;
+    margin-top: 10px;
+}
+
+</style>
+
+<body>
+    <div class="portfolio-container">
+        <!-- Navigation Bar -->
+        <ul class="navlist">
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#studies-experience">Studies & Experience</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+           
+        </ul>
+
+        <!-- Main Content Section -->
+        <div class="main-container" id="home">
+            <div class="left">
+
+            
+            <div class="content">
+                <div class="ahed">
+                <h2 class="amin-head" id="co">Hello! I am Ahmer Karori</h2>
+            </div>
+                <h1>AI-Content Creator</h1>
+                <p>This is Ahmer Karori, an AI-content creator. We use AI tools to create realistic AI videos by
+                    utilizing
+                    resources like Leonardo.ai, Elevenlabs, Gemini.ai, and Sora.ai.
+                </p>
+                <div class="button">
+                    <button>Hire Me</button>
+                    <button>View Channels</button>
+                </div>
+            </div>
+        </div>
+
+<div class="right">
+    <img src="ahmer-pic.jpg" alt="Ahmer Image">
+</div>
+
+        </div>
+
+        <!-- Right Container for Social Icons -->
+        <div class="social">
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+    </div>
+
+<!-- Our Services Section -->
+<div id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-box">
+            <i class="fas fa-video"></i>
+            <h3>AI Video Creation</h3>
+            <p>We use cutting-edge AI tools to create realistic and engaging videos tailored to your needs. AI can generate videos from text using text-to-video generation models based on deep learning techniques.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-paint-brush"></i>
+            <h3>AI Artwork</h3>
+            <p>Generate stunning AI-based artwork using advanced platforms like Leonardo.ai and others. AI can generate videos from text using text-to-video generation models based on deep learning techniques.</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-robot"></i>
+            <h3>AI Automation</h3>
+            <p>Optimize your workflows and save time with our AI-driven automation services. AI can generate videos from text using text-to-video generation models based on deep learning techniques.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Studies and Experience Section -->
+<div id="studies-experience" class="studies-experience-section">
+    <h2>Studies and Experience</h2>
+    <div class="studies-container">
+        <div class="study-box">
+            <h3>Bachelor of Science in IT</h3>
+            <p>Air University, Islamabad</p>
+            <span>2023 - Present</span>
+            <p>Gaining expertise in IT, programming, and emerging technologies.</p>
+        </div>
+        <div class="study-box">
+            <h3>Freelance AI-Content Creator</h3>
+            <p>Self-Employed</p>
+            <span>2022 - Present</span>
+            <p>Created over 50 AI-based videos and artworks for global clients.</p>
+        </div>
+        <div class="study-box">
+            <h3>High School</h3>
+            <p>ABC High School</p>
+            <span>2021 - 2023</span>
+            <p>Excelled in computer science and mathematics, laying the foundation for an IT career.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Pricing Table Section -->
+<div id="pricing" class="pricing-section">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-container">
+        <!-- Basic Plan -->
+        <div class="pricing-box">
+            <h3>Basic Plan</h3>
+            <p class="price">$49</p>
+            <ul>
+                <li>5 AI-Generated Videos</li>
+                <li>1 Revision Included</li>
+                <li>Delivery in 7 Days</li>
+                <li>Email Support</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="pricing-box popular">
+            <h3>Standard Plan</h3>
+            <p class="price-cen">$99</p>
+            <ul>
+                <li>10 AI-Generated Videos</li>
+                <li>2 Revisions Included</li>
+                <li>Delivery in 5 Days</li>
+                <li>Priority Support</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="pricing-box">
+            <h3>Premium Plan</h3>
+            <p class="price">$199</p>
+            <ul>
+                <li>20 AI-Generated Videos</li>
+                <li>Unlimited Revisions</li>
+                <li>Delivery in 3 Days</li>
+                <li>24/7 Support</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <p>If you have any questions or inquiries, feel free to reach out. I'm always open to new opportunities and collaborations.</p>
+            
+            <!-- Contact Details with Icons -->
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <p><strong>Email:</strong> ahmer.karori@email.com</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone-alt"></i>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Address:</strong> 1234 Street, City, Country</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <ul class="footer-navlist">
+        <li><a href="#home">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#studies-experience">Studies & Experience</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>&copy; 2024 Ahmer Karori. All Rights Reserved.</p>
+</footer>
+
+
+</body>
+
+</html>
